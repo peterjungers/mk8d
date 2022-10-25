@@ -2,15 +2,13 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
 
-db = SQLAlchemy()
+app = Flask(__name__)
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///site.db"
+app.config['SQLALCHEMY_ECHO'] = False
+db = SQLAlchemy(app)
 
-def create_app():
-    app = Flask(__name__)
-    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///site.db"
-    db.init_app(app)
+from mk8d import handlers
+from mk8d import models
+from mk8d import routes
 
-    from mk8d import handlers
-    from mk8d import models
-    from mk8d import routes
 
-    return app

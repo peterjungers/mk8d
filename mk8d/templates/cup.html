@@ -1,0 +1,44 @@
+{% extends "template.html" %}
+{% block content %}
+<table>
+    <caption>{{ cup_name }} Cup</caption>
+    <!--
+    First if statement applies to original cups in game. See note in
+    "cup" function at routes.py for more information about why this is
+    so opaque:
+    if original cup name ("table[3][3].name") is equal to "cup_name":
+    -->
+    {% if table[3][3].name == cup_name %}
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Track</th>
+            </tr>
+        </thead>
+        {% for cell in table %}
+        <tr>
+            <td>{{ cell.CupTrack.track_order }}</td>
+            <td>{{ cell.Track.name }}</td>
+        </tr>
+        {% endfor %}
+    <!--
+    This applies to new cups:
+    -->
+    {% else %}
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Track</th>
+                <th>Original Cup</th>
+            </tr>
+        </thead>
+        {% for cell in table %}
+        <tr>
+            <td>{{ cell.CupTrack.track_order }}</td>
+            <td>{{ cell.Track.name }}</td>
+            <td>{{ cell[3].name }}</td>
+        </tr>
+        {% endfor %}
+    {% endif %}
+</table>
+{% endblock content %}
