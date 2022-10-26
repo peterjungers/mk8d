@@ -6,7 +6,7 @@ Description: CSS stylesheet for Mario Kart 8 Deluxe Cup Generator
 
 
 /*CSS reset*/
-body, h2, h4 {
+html, body, header, main, footer, section, h2, h4, p, a, table, caption, th, tr, td {
     margin: 0;
     padding: 0;
     border: 0;
@@ -26,46 +26,53 @@ a {
     text-decoration: none;
 }
 
-/* Mobile viewport -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
-
-#container {
-    background-color: #191966;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding-bottom: 60%;
-}
-
 header {
     background-color: #2d2db9;
+    padding-left: .45em;
+    padding-top: 19px;
+    height: 80px
+}
+
+header h2 {
+    color: #eee;
+    margin: 0 5%;
+    /*padding-top: 5%;*/
+}
+
+header h4 {
+    color: #eee;
+    margin: 0 5%;
+    /*padding-bottom: 4%;*/
 }
 
 header a {
     color: #eee;
 }
 
-#header-text {
-    color: #eee;
-    margin: 0 5%;
-    padding: 5% 0 4%;
-}
-
 main {
-    font-size: 1em;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 36px;
     line-height: 1.25em;
-    margin: 5%;
+    margin: 0 5%;
 }
 
-#content {
-    width: 100%;
-    margin-bottom: 8%;
+main h4 {
+    padding: 0 0 .75em .45em;
 }
 
-/* Table rules --------------------------------------------------*/
+main p {
+    padding-bottom: 1em;
+}
+
+main p:last-child {
+    padding-bottom: 0;
+}
+
 table {
     border-collapse: collapse;
     color: #191966;
     width: 100%;
-    margin-bottom: 10%;
 }
 
 caption {
@@ -73,16 +80,15 @@ caption {
     font-size: 1.15em;
     font-weight: bold;
     text-align: left;
-    padding: 0 0 .75em .45em;
-}
-
-th, td {
-    padding: .5em;
+    padding: 0 0 .7em .45em;
 }
 
 th {
     text-align: left;
-    background-color: #FF8C00;
+}
+
+th, td {
+    padding: .5em;
 }
 
 thead tr:first-of-type {
@@ -90,22 +96,45 @@ thead tr:first-of-type {
 }
 
 tr:nth-child(even) {
-    background-color: white;
+    background-color: #fff;
     opacity: .75;
 }
 
 tr:nth-child(odd) {
-    background-color: white;
+    background-color: #fff;
     opacity: .5;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: 48% 48%;
-    gap: 2% 4%;
+footer {
+    margin: 12px 0 24px 5%;
+    padding-left: .45em;
 }
 
-.cup-links {
+footer a {
+    color: #eee;
+    font-size: .75em;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    background-color: #191966;
+}
+
+.cups-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.cups-grid h4:nth-of-type(1) {
+    grid-column: 1 / span 2;
+    height: 1em;
+    padding: 0 0 0 .45em;
+}
+
+.cup-link {
     font-size: 1.25em;
     text-align: center;
     width: 100%;
@@ -114,141 +143,43 @@ tr:nth-child(odd) {
     border-radius: 8px;
 }
 
-#mushroom {
-    background-color: #e60000;
+.cup-new {
+    background-color: #a31eb7;
     color: #eee;
 }
 
-#flower {
-    background-color: #FF8C00;
+.cup-original {
+    background-color: #990057;
     color: #eee;
 }
 
-#star {
-    background-color: #ffd700;
-    color: #191966;
-}
-
-#special {
-    background-color: #ffcc00;
-    color: #191966;
-}
-
-#shell {
-    background-color: #009900;
+.table-header-new {
     color: #eee;
+    background-color: #a31eb7;
 }
 
-#banana {
-    background-color: #009900;
+.table-header-original {
     color: #eee;
+    background-color: #990057;
 }
 
-#leaf {
-    background-color: #009900;
-    color: #eee;
+@media screen and (min-width: 1024px) {
+
+    main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    main section:nth-of-type(1) {
+        grid-column: 1 / span 2;
+    }
+
+    .container {
+        max-width: 1024px;
+        margin: 0 auto;
+    }
+
+    .cups-grid {
+        grid-template-rows: 1em repeat(8, 50px);
+    }
+
 }
-
-#lightning {
-    background-color: #009900;
-    color: #eee;
-}
-
-#egg {
-    background-color: #009900;
-    color: #eee;
-}
-
-#crossing {
-    background-color: #009900;
-    color: #eee;
-}
-
-#triforce {
-    background-color: #009900;
-    color: #eee;
-}
-
-#bell {
-    background-color: #009900;
-    color: #eee;
-}
-
-#golden-dash {
-    background-color: #009900;
-    color: #eee;
-}
-
-#lucky-cat {
-    background-color: #009900;
-    color: #eee;
-}
-
-#turnip {
-    background-color: #009900;
-    color: #eee;
-}
-
-#propeller {
-    background-color: #009900;
-    color: #eee;
-}
-
-#town {
-    background-color: #009900;
-    color: #eee;
-}
-
-#building {
-    background-color: #009900;
-    color: #eee;
-}
-
-#topographic {
-    background-color: #009900;
-    color: #eee;
-}
-
-#sky {
-    background-color: #009900;
-    color: #eee;
-}
-
-#city {
-    background-color: #009900;
-    color: #eee;
-}
-
-#castle {
-    background-color: #009900;
-    color: #eee;
-}
-
-#snow {
-    background-color: #009900;
-    color: #eee;
-}
-
-#desert {
-    background-color: #009900;
-    color: #eee;
-}
-
-#underwater {
-    background-color: #009900;
-    color: #eee;
-}
-
-#sci-fi {
-    background-color: #009900;
-    color: #eee;
-}
-
-#mario {
-    background-color: #009900;
-    color: #eee;
-}
-
-/* Large Desktop */
-
-

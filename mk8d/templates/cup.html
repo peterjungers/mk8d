@@ -1,35 +1,13 @@
 {% extends "template.html" %}
-{% block content %}
+{% block table_description %}
 <table>
     <caption>{{ cup_name }} Cup</caption>
-    <!--
-    First if statement applies to original cups in game. See note in
-    "cup" function at routes.py for more information about why this is
-    so opaque:
-    if original cup name ("table[3][3].name") is equal to "cup_name":
-    -->
-    {% if table[3][3].name == cup_name %}
+    {% if cup_type == "new_cup" %}
         <thead>
             <tr>
-                <th>No.</th>
-                <th>Track</th>
-            </tr>
-        </thead>
-        {% for cell in table %}
-        <tr>
-            <td>{{ cell.CupTrack.track_order }}</td>
-            <td>{{ cell.Track.name }}</td>
-        </tr>
-        {% endfor %}
-    <!--
-    This applies to new cups:
-    -->
-    {% else %}
-        <thead>
-            <tr>
-                <th>No.</th>
-                <th>Track</th>
-                <th>Original Cup</th>
+                <th class="table-header-new">No.</th>
+                <th class="table-header-new">Track</th>
+                <th class="table-header-new">Original Cup</th>
             </tr>
         </thead>
         {% for cell in table %}
@@ -39,6 +17,19 @@
             <td>{{ cell[3].name }}</td>
         </tr>
         {% endfor %}
+    {% elif cup_type == "original_cup" %}
+        <thead>
+            <tr>
+                <th class="table-header-original">No.</th>
+                <th class="table-header-original">Track</th>
+            </tr>
+        </thead>
+        {% for cell in table %}
+        <tr>
+            <td>{{ cell.CupTrack.track_order }}</td>
+            <td>{{ cell.Track.name }}</td>
+        </tr>
+        {% endfor %}
     {% endif %}
 </table>
-{% endblock content %}
+{% endblock table_description %}

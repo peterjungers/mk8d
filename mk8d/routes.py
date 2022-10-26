@@ -1,4 +1,6 @@
-from flask import render_template, url_for
+from distutils.util import strtobool
+
+from flask import render_template, url_for, request
 from sqlalchemy import select
 from sqlalchemy.orm import aliased
 
@@ -15,6 +17,8 @@ def index():
 
 @app.route('/cup/<cup_name>')
 def cup(cup_name):
+    cup_type = request.args.get("cup_type")
+
     cup_alias = aliased(Cup)
     table = (db.session.execute(select(Cup, Track, CupTrack, cup_alias)
              .join(cup_alias, Track.original_cup == cup_alias.id)
@@ -32,4 +36,8 @@ def cup(cup_name):
     of 3.
     """
 
-    return render_template("cup.html", cup_name=cup_name, table=table)
+    return render_template("cup.html",
+                           cup_name=cup_name,
+                           table=table,
+                           cup_type=cup_type)
+
