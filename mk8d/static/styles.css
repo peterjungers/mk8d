@@ -41,6 +41,10 @@ header h2 a {
     color: #eee;
 }
 
+header h2 a:hover {
+    color: #d3d3f6;
+}
+
 main {
     display: grid;
     grid-template-columns: 1fr;
@@ -109,6 +113,10 @@ footer a {
     padding-left: .45em;
 }
 
+footer a:hover {
+    color: #d3d3f6;
+}
+
 #header-container {
     background-color: #2d2db9;
     height: 80px;
@@ -145,12 +153,12 @@ footer a {
     border-radius: 8px;
 }
 
-.cup-new {
+.cup-new a {
     background-color: #a31eb7;
     color: #eee;
 }
 
-.cup-original {
+.cup-original a {
     background-color: #990057;
     color: #eee;
 }
@@ -202,6 +210,16 @@ footer a {
         grid-column: 1 / span 2;
         column-count: 2;
         column-gap: 36px;
+    }
+
+    .cup-new a:hover {
+        background-color: #61126e;
+        color: #eee;
+    }
+
+    .cup-original a:hover {
+        background-color: #66003a;
+        color: #eee;
     }
 
 }
