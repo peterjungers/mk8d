@@ -1,5 +1,6 @@
 {% extends "template.html" %}
-{% block table_description %}
+
+{% block table %}
 <table>
     <caption>{{ cup_name }} Cup</caption>
     {% if cup_type == "new_cup" %}
@@ -32,4 +33,4 @@
         {% endfor %}
     {% endif %}
 </table>
-{% endblock table_description %}
+{% endblock table %}

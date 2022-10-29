@@ -5,7 +5,7 @@ Description: CSS stylesheet for Mario Kart 8 Deluxe Cup Generator
 */
 
 
-/*CSS reset*/
+/* CSS reset */
 html, body, header, main, footer, section, h2, h4, p, a, table, caption, th, tr, td {
     margin: 0;
     padding: 0;
@@ -28,33 +28,26 @@ a {
 
 header {
     background-color: #2d2db9;
-    padding-left: .45em;
+    height: 80px;
+    margin: 0 5%;
     padding-top: 19px;
-    height: 80px
 }
 
-header h2 {
-    color: #eee;
-    margin: 0 5%;
-    /*padding-top: 5%;*/
+header #header-text {
+    padding-left: .45em;
 }
 
-header h4 {
-    color: #eee;
-    margin: 0 5%;
-    /*padding-bottom: 4%;*/
-}
-
-header a {
+header h2 a {
     color: #eee;
 }
 
 main {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 36px;
+    row-gap: 36px;
     line-height: 1.25em;
     margin: 0 5%;
+    padding-top: 24px;
 }
 
 main h4 {
@@ -62,7 +55,7 @@ main h4 {
 }
 
 main p {
-    padding-bottom: 1em;
+    padding: 0 .45em 1em;
 }
 
 main p:last-child {
@@ -106,25 +99,33 @@ tr:nth-child(odd) {
 }
 
 footer {
-    margin: 12px 0 24px 5%;
-    padding-left: .45em;
+    margin: 0 0 0 5%;
+    align-self: end;
 }
 
 footer a {
     color: #eee;
     font-size: .75em;
+    padding-left: .45em;
 }
 
-.container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px;
+#header-container {
+    background-color: #2d2db9;
+    height: 80px;
+}
+
+#main-footer-container {
     background-color: #191966;
+    display: grid;
+    grid-template-rows: 1fr 36px;
+    gap: 15px;
+    padding-bottom: 36px;
 }
 
 .cups-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-column: 1;
     gap: 15px;
 }
 
@@ -138,6 +139,7 @@ footer a {
     font-size: 1.25em;
     text-align: center;
     width: 100%;
+    min-width: 130px;
     height: 50px;
     line-height: 50px;
     border-radius: 8px;
@@ -163,23 +165,43 @@ footer a {
     background-color: #990057;
 }
 
-@media screen and (min-width: 1024px) {
+/* Galaxy fold viewport */
+@media screen and (max-width: 280px) {
 
-    main {
-        grid-template-columns: repeat(2, 1fr);
+    table {
+        min-width: 280px;
     }
 
-    main section:nth-of-type(1) {
-        grid-column: 1 / span 2;
+    #header-text {
+        min-width: 300px;
     }
 
-    .container {
-        max-width: 1024px;
-        margin: 0 auto;
+    #main-footer-container {
+        min-width: 310px;
     }
 
     .cups-grid {
-        grid-template-rows: 1em repeat(8, 50px);
+        grid-template-columns: auto;
+    }
+
+    .cups-grid h4:nth-of-type(1) {
+        grid-column: 1;
+    }
+
+}
+
+/* Tablet and desktop viewports */
+@media screen and (min-width: 769px) {
+
+    header, main, footer {
+        width: 769px;
+        margin: 0 auto;
+    }
+
+    #introduction {
+        grid-column: 1 / span 2;
+        column-count: 2;
+        column-gap: 36px;
     }
 
 }
