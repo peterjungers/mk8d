@@ -6,7 +6,7 @@ Description: CSS stylesheet for Mario Kart 8 Deluxe Cup Generator
 
 
 /* CSS reset */
-html, body, header, main, footer, section, h2, h4, p, a, table, caption, th, tr, td {
+html, body, header, main, footer, section, h2, h3, h4, p, a, table, caption, th, tr, td {
     margin: 0;
     padding: 0;
     border: 0;
@@ -52,6 +52,10 @@ main {
     line-height: 1.25em;
     margin: 0 5%;
     padding-top: 24px;
+}
+
+main h3 {
+    padding: 1em 0 2em .45em;
 }
 
 main h4 {
@@ -130,6 +134,7 @@ footer a:hover {
     padding-bottom: 36px;
 }
 
+/* Grid holding cup-link links */
 .cups-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -137,12 +142,14 @@ footer a:hover {
     gap: 15px;
 }
 
+/* Targets heading within the cups-grid */
 .cups-grid h4:nth-of-type(1) {
     grid-column: 1 / span 2;
     height: 1em;
     padding: 0 0 0 .45em;
 }
 
+/* Individual link box for each cup */
 .cup-link {
     font-size: 1.25em;
     text-align: center;
@@ -158,8 +165,18 @@ footer a:hover {
     color: #eee;
 }
 
+.cup-new a:hover {
+    background-color: #61126e;
+    color: #eee;
+}
+
 .cup-original a {
     background-color: #990057;
+    color: #eee;
+}
+
+.cup-original a:hover {
+    background-color: #66003a;
     color: #eee;
 }
 
@@ -210,16 +227,6 @@ footer a:hover {
         grid-column: 1 / span 2;
         column-count: 2;
         column-gap: 36px;
-    }
-
-    .cup-new a:hover {
-        background-color: #61126e;
-        color: #eee;
-    }
-
-    .cup-original a:hover {
-        background-color: #66003a;
-        color: #eee;
     }
 
 }

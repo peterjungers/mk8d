@@ -7,13 +7,13 @@ from mk8d import db
 from mk8d.models import Cup, CupTrack, Track
 
 
-@app.route('/')
-@app.route('/index')
+@app.route("/")
+@app.route("/index")
 def index():
     return render_template("index.html")
 
 
-@app.route('/cup/<cup_name>')
+@app.route("/cup/<cup_name>")
 def cup(cup_name):
     cup_type = request.args.get("cup_type")
 
@@ -32,4 +32,5 @@ def cup(cup_name):
     return render_template("cup.html",
                            cup_name=cup_name,
                            table=table,
-                           cup_type=cup_type)
+                           cup_type=cup_type,
+                           title=cup_name)
