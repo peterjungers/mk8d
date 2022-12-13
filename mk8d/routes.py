@@ -17,13 +17,13 @@ def index():
 def cup(cup_name):
     cup_type = request.args.get("cup_type")
 
-    cup_alias = aliased(Cup)
+    Cup_alias = aliased(Cup, name="Cup_alias")
     table = (db.session.execute(
-             select(Cup, Track, CupTrack, cup_alias)
-             .join(cup_alias, Track.original_cup == cup_alias.id)
+             select(Cup, Track, CupTrack, Cup_alias)
+             .join(Cup_alias, Track.original_cup == Cup_alias.id)
              .filter(Cup.id == CupTrack.cup_id,
                      CupTrack.track_id == Track.id,
-                     Track.original_cup == cup_alias.id,
+                     Track.original_cup == Cup_alias.id,
                      Cup.name == cup_name)
              .order_by(CupTrack.track_order)
              ).all()

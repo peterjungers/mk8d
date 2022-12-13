@@ -5,13 +5,15 @@ Description: CSS stylesheet for Mario Kart 8 Deluxe Cup Generator
 */
 
 
-/* CSS reset */
+/* || CSS RESET */
 html, body, header, main, footer, section, h2, h3, h4, p, a, table, caption, th, tr, td {
     margin: 0;
     padding: 0;
     border: 0;
 }
 
+
+/* || GENERAL STYLES */
 * {
     box-sizing: border-box;
 }
@@ -121,6 +123,8 @@ footer a:hover {
     color: #d3d3f6;
 }
 
+
+/* || SITE CONTAINERS */
 #header-container {
     background-color: #2d2db9;
     height: 80px;
@@ -134,6 +138,8 @@ footer a:hover {
     padding-bottom: 36px;
 }
 
+
+/* || CLASSES */
 /* Grid holding cup-link links */
 .cups-grid {
     display: grid;
@@ -160,6 +166,7 @@ footer a:hover {
     border-radius: 8px;
 }
 
+/* New cups */
 .cup-new a {
     background-color: #a31eb7;
     color: #eee;
@@ -170,6 +177,7 @@ footer a:hover {
     color: #eee;
 }
 
+/* Original cups */
 .cup-original a {
     background-color: #990057;
     color: #eee;
@@ -180,6 +188,7 @@ footer a:hover {
     color: #eee;
 }
 
+/* Table header color relates to type of cup (new or original) */
 .table-header-new {
     color: #eee;
     background-color: #a31eb7;
@@ -190,9 +199,10 @@ footer a:hover {
     background-color: #990057;
 }
 
-/* Galaxy fold viewport */
-@media screen and (max-width: 280px) {
 
+/* VIEWPORTS */
+/* || Galaxy Fold viewport */
+@media screen and (max-width: 280px) {
     table {
         min-width: 280px;
     }
@@ -212,12 +222,10 @@ footer a:hover {
     .cups-grid h4:nth-of-type(1) {
         grid-column: 1;
     }
-
 }
 
-/* Tablet and desktop viewports */
+/* || Tablet and desktop viewports */
 @media screen and (min-width: 769px) {
-
     header, main, footer {
         width: 769px;
         margin: 0 auto;
@@ -228,5 +236,4 @@ footer a:hover {
         column-count: 2;
         column-gap: 36px;
     }
-
 }

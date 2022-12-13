@@ -15,7 +15,7 @@
         <tr>
             <td>{{ cell.CupTrack.track_order }}</td>
             <td>{{ cell.Track.name }}</td>
-            <td>{{ cell[3].name }}</td>
+            <td>{{ cell.Cup_alias.name }}</td>
         </tr>
         {% endfor %}
     {% elif cup_type == "original_cup" %}

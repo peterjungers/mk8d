@@ -5,3 +5,13 @@ This was my second web application created in Flask. While serving as a way to b
 
 Peter Jungers  
 October 2022
+
+---
+
+### Release history
+**Version 1.0**<br>
+October 2022<br>
+Initial application<br>  
+**Version 1.1**<br>
+December 2022<br>
+Updated to reflect new downloadable content released in December

@@ -32,16 +32,17 @@
 
       <section class="cups-grid cup-new">
         <h4 >New Cups</h4>
+        <a class="cup-link" href="{{ url_for('cup', cup_name='Ancient', cup_type='new_cup') }}">Ancient</a>
         <a class="cup-link" href="{{ url_for('cup', cup_name='Building', cup_type='new_cup') }}">Building</a>
         <a class="cup-link" href="{{ url_for('cup', cup_name='Castle', cup_type='new_cup') }}">Castle</a>
-        <a class="cup-link" href="{{ url_for('cup', cup_name='City', cup_type='new_cup') }}">City</a>
         <a class="cup-link" href="{{ url_for('cup', cup_name='Desert', cup_type='new_cup') }}">Desert</a>
         <a class="cup-link" href="{{ url_for('cup', cup_name='Mario', cup_type='new_cup') }}">Mario</a>
+        <a class="cup-link" href="{{ url_for('cup', cup_name='Rainbow', cup_type='new_cup') }}">Rainbow</a>
         <a class="cup-link" href="{{ url_for('cup', cup_name='Sci-Fi', cup_type='new_cup') }}">Sci-Fi</a>
         <a class="cup-link" href="{{ url_for('cup', cup_name='Sky', cup_type='new_cup') }}">Sky</a>
         <a class="cup-link" href="{{ url_for('cup', cup_name='Snow', cup_type='new_cup') }}">Snow</a>
         <a class="cup-link" href="{{ url_for('cup', cup_name='Topographic', cup_type='new_cup') }}">Topographic</a>
-        <a class="cup-link" href="{{ url_for('cup', cup_name='Town', cup_type='new_cup', header_color=header_color) }}">Town</a>
+        <a class="cup-link" href="{{ url_for('cup', cup_name='Town', cup_type='new_cup') }}">Town</a>
         <a class="cup-link" href="{{ url_for('cup', cup_name='Underwater', cup_type='new_cup') }}">Underwater</a>
       </section>
 
@@ -56,8 +57,10 @@
         <a class="cup-link" href="{{ url_for('cup', cup_name='Leaf', cup_type='original_cup') }}">Leaf</a>
         <a class="cup-link" href="{{ url_for('cup', cup_name='Lightning', cup_type='original_cup') }}">Lightning</a>
         <a class="cup-link" href="{{ url_for('cup', cup_name='Lucky Cat', cup_type='original_cup') }}">Lucky Cat</a>
+        <a class="cup-link" href="{{ url_for('cup', cup_name='Moon', cup_type='original_cup') }}">Moon</a>
         <a class="cup-link" href="{{ url_for('cup', cup_name='Mushroom', cup_type='original_cup') }}">Mushroom</a>
         <a class="cup-link" href="{{ url_for('cup', cup_name='Propeller', cup_type='original_cup') }}">Propeller</a>
+        <a class="cup-link" href="{{ url_for('cup', cup_name='Rock', cup_type='original_cup') }}">Rock</a>
         <a class="cup-link" href="{{ url_for('cup', cup_name='Shell', cup_type='original_cup') }}">Shell</a>
         <a class="cup-link" href="{{ url_for('cup', cup_name='Special', cup_type='original_cup') }}">Special</a>
         <a class="cup-link" href="{{ url_for('cup', cup_name='Star', cup_type='original_cup') }}">Star</a>
