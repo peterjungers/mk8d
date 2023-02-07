@@ -1,4 +1,4 @@
-from flask import render_template, request, url_for
+from flask import render_template, request
 from sqlalchemy import select
 from sqlalchemy.orm import aliased
 
@@ -13,24 +13,21 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/cup/<cup_name>")
-def cup(cup_name):
-    cup_type = request.args.get("cup_type")
-
+@app.route("/cup/<cup_type>/<cup_name>")
+def cup(cup_type, cup_name):
     Cup_alias = aliased(Cup, name="Cup_alias")
-    table = (db.session.execute(
-             select(Cup, Track, CupTrack, Cup_alias)
-             .join(Cup_alias, Track.original_cup == Cup_alias.id)
-             .filter(Cup.id == CupTrack.cup_id,
-                     CupTrack.track_id == Track.id,
-                     Track.original_cup == Cup_alias.id,
-                     Cup.name == cup_name)
-             .order_by(CupTrack.track_order)
-             ).all()
-             )
+    table = db.session.execute(
+            select(Cup, Track, CupTrack, Cup_alias)
+            .join(Cup_alias, Track.original_cup == Cup_alias.id)
+            .filter(Cup.id == CupTrack.cup_id,
+                    CupTrack.track_id == Track.id,
+                    Track.original_cup == Cup_alias.id,
+                    Cup.name == cup_name)
+            .order_by(CupTrack.track_order)
+            )
 
     return render_template("cup.html",
+                           title=cup_name,
                            cup_name=cup_name,
-                           table=table,
                            cup_type=cup_type,
-                           title=cup_name)
+                           table=table)

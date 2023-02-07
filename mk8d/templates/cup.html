@@ -12,11 +12,11 @@
             </tr>
         </thead>
         {% for cell in table %}
-        <tr>
-            <td>{{ cell.CupTrack.track_order }}</td>
-            <td>{{ cell.Track.name }}</td>
-            <td>{{ cell.Cup_alias.name }}</td>
-        </tr>
+            <tr>
+                <td>{{ cell.CupTrack.track_order }}</td>
+                <td>{{ cell.Track.name }}</td>
+                <td>{{ cell.Cup_alias.name }}</td>
+            </tr>
         {% endfor %}
     {% elif cup_type == "original_cup" %}
         <thead>
@@ -26,10 +26,10 @@
             </tr>
         </thead>
         {% for cell in table %}
-        <tr>
-            <td>{{ cell.CupTrack.track_order }}</td>
-            <td>{{ cell.Track.name }}</td>
-        </tr>
+            <tr>
+                <td>{{ cell.CupTrack.track_order }}</td>
+                <td>{{ cell.Track.name }}</td>
+            </tr>
         {% endfor %}
     {% endif %}
 </table>

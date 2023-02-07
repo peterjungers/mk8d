@@ -5,8 +5,11 @@ Description: CSS stylesheet for Mario Kart 8 Deluxe Cup Generator
 */
 
 
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap');
+
+
 /* || CSS RESET */
-html, body, header, main, footer, section, h2, h3, h4, p, a, table, caption, th, tr, td {
+html, body, header, main, footer, section, h1, h2, h3, h4, p, a, table, caption, th, tr, td {
     margin: 0;
     padding: 0;
     border: 0;
@@ -19,7 +22,8 @@ html, body, header, main, footer, section, h2, h3, h4, p, a, table, caption, th,
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Raleway", "Arial", sans-serif;
+    font-weight: 400;
     color: #eee;
     background-color: #2d2db9;
 }
@@ -39,12 +43,12 @@ header #header-text {
     padding-left: .45em;
 }
 
-header h2 a {
-    color: #eee;
+header h1 {
+    font-size: 1.5em;
 }
 
-header h2 a:hover {
-    color: #d3d3f6;
+header h1 a {
+    color: #eee;
 }
 
 main {
@@ -65,6 +69,9 @@ main h4 {
 }
 
 main p {
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.35em;
     padding: 0 .45em 1em;
 }
 
