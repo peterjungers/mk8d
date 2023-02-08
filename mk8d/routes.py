@@ -24,10 +24,13 @@ def cup(cup_type, cup_name):
                     Track.original_cup == Cup_alias.id,
                     Cup.name == cup_name)
             .order_by(CupTrack.track_order)
-            )
+            ).all()
 
-    return render_template("cup.html",
-                           title=cup_name,
-                           cup_name=cup_name,
-                           cup_type=cup_type,
-                           table=table)
+    if table:
+        return render_template("cup.html",
+                               title=cup_name,
+                               cup_name=cup_name,
+                               cup_type=cup_type,
+                               table=table)
+    else:
+        return render_template("404.html")

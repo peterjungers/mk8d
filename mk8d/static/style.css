@@ -9,7 +9,7 @@ Description: CSS stylesheet for Mario Kart 8 Deluxe Cup Generator
 
 
 /* || CSS RESET */
-html, body, header, main, footer, section, h1, h2, h3, h4, p, a, table, caption, th, tr, td {
+html, body, div, header, main, footer, section, h1, h2, h3, p, a, table, caption, th, tr, td {
     margin: 0;
     padding: 0;
     border: 0;
@@ -51,6 +51,10 @@ header h1 a {
     color: #eee;
 }
 
+header h2 {
+    font-size: 1em;
+}
+
 main {
     display: grid;
     grid-template-columns: 1fr;
@@ -61,11 +65,13 @@ main {
 }
 
 main h3 {
-    padding: 1em 0 2em .45em;
+    font-size: 1em;
+    padding: 0 0 0 .45em;
 }
 
-main h4 {
-    padding: 0 0 .75em .45em;
+main h3.error {
+    font-size: 1.25em;
+    padding: 1em 0 2em .45em;
 }
 
 main p {
@@ -156,10 +162,9 @@ footer a:hover {
 }
 
 /* Targets heading within the cups-grid */
-.cups-grid h4:nth-of-type(1) {
+.cups-grid h3:nth-of-type(1) {
     grid-column: 1 / span 2;
     height: 1em;
-    padding: 0 0 0 .45em;
 }
 
 /* Individual link box for each cup */
@@ -226,7 +231,7 @@ footer a:hover {
         grid-template-columns: auto;
     }
 
-    .cups-grid h4:nth-of-type(1) {
+    .cups-grid h3:nth-of-type(1) {
         grid-column: 1;
     }
 }
