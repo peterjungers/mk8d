@@ -1,7 +1,7 @@
 /*
+CSS for Mario Kart 8 Deluxe Cup Generator
 Author: Peter Jungers
 Date: October 2022
-Description: CSS stylesheet for Mario Kart 8 Deluxe Cup Generator
 */
 
 
@@ -9,7 +9,7 @@ Description: CSS stylesheet for Mario Kart 8 Deluxe Cup Generator
 
 
 /* || CSS RESET */
-html, body, div, header, main, footer, section, h1, h2, h3, p, a, table, caption, th, tr, td {
+html, body, div, header, main, footer, section, h1, h2, h3, p, a, table, caption, thead, tbody, th, tr, td {
     margin: 0;
     padding: 0;
     border: 0;
