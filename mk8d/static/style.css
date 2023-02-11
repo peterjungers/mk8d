@@ -32,6 +32,10 @@ a {
     text-decoration: none;
 }
 
+a:focus {
+    outline-color: #2d2db9;
+}
+
 header {
     background-color: #2d2db9;
     height: 80px;
@@ -129,7 +133,7 @@ footer {
 footer a {
     color: #eee;
     font-size: .75em;
-    padding-left: .45em;
+    margin-left: .45em;
 }
 
 footer a:hover {
