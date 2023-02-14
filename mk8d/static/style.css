@@ -26,6 +26,10 @@ body {
     font-weight: 400;
     color: #eee;
     background-color: #2d2db9;
+    /* So font-size doesn't increase when mobile switches to landscape: */
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: 100%;
 }
 
 a {
