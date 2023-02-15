@@ -12,6 +12,11 @@ Date: October 2022
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     <link rel="icon" href="data:;base64,iVBORwOKGO="/>  {# For Chrome favicon console error #}
+    <!-- For iPhone message thumbnail -->
+    <meta property="og:title" content="MK8D Cup Generator">
+    <meta property="og:type" content="image.png">
+    <meta property="og:url" content="https://www.peterjungers.com/mk8d">
+    <meta property="og:image" content="{{ url_for('static', filename='images/mk8d_index.png') }}">
 
     {% if title %}
         <title>Mario Kart 8 Deluxe Cup Generator—{{ title }} Cup</title>
