@@ -26,8 +26,6 @@ def cup(cup_type, cup_name):
             .order_by(CupTrack.track_order)
             ).all()
 
-    print(cup_name)
-
     if table:
         return render_template("cup.html",
                                title=cup_name,
